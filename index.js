@@ -86,13 +86,13 @@ Car.prototype.fill = function(gallons){
   return this.tank += gallons;
 };
 
-// Car.prototype.drive = function(distance){
-//   this.odometer += distance;
-//   (this.tank -= (distance / this.milesPerGallon));
-//   if(this.tank == 0){
-//     return `I ran out of fuel at ${this.odometer} miles!`;
-//   }
-// };
+Car.prototype.drive = function(distance){
+  this.odometer += distance;
+  (this.tank -= (distance / this.milesPerGallon));
+  if(this.tank === 0){
+    return `I ran out of fuel at ${this.odometer} miles!`;
+  }
+};
 
 
 /*
@@ -121,8 +121,8 @@ Baby.prototype.play = function(){
   In your own words explain the four principles for the "this" keyword below:
   1. THIS refers to the parent object 
   2. Window Binding: it's global scope, and no declared object
-  3. new binding: 'new' operator with constructor
-  4. Explicit binding: call and apply for object, arguments and arrays
+  3. new binding: 'new' operator with constructor from the funnction constructor
+  4. Explicit binding: call and apply for objects with the new operator
 */
 
 
